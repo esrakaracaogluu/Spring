@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--<bean id="araba" class="com.esra.springdemo.Otomobil" ></bean>
+<bean id="bus" class="com.esra.springdemo.Otobus" ></bean>
+-->
+
+<!--id kimiktir ve aynı kimlikte iki kişi olmaz  -->
+<bean id="turkceci" class="com.esra.springdemo.TurkceOgretmeni"  />
+<bean id="fenci" class="com.esra.springdemo.FenOgretmeni"  />
+<bean id="javaci" class="com.esra.springdemo.JavaOgretmeni"  />
+
+</beans>
