@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<bean class="com.esra.springdemo.IsciOzlukDosyasi" id="isci" />
+
+	<bean class="com.esra.springdemo.MemurOzlukDosyasi" id="memur" />
+
+	<context:property-placeholder
+		location="classpath:project.properties" />
+
+	<!-- İKİLİ CONSTRUCTOR SETTER İNJECTION<bean id="omer" class="com.esra.springdemo.Personel"><constructor-arg 
+		value="omer" /> bu ikisi cons 3.setter<constructor-arg value="karakas" /><property 
+		name="ozlukDosyasi" ref="isci" /> bu referanstaki işçi yukarıdaki idsi isci 
+		olana gidiyor</bean> -->
+
+
+	<!-- DEFAULT CONSTRUCTOR SETTER İNJECTION -->
+
+
+	<!-- <bean id="omer" class="com.esra.springdemo.Personel"><property name="ozlukDosyasi" 
+		ref="isci" /><property name="isim" value="omer" /><property name="soyisim" 
+		value="karakas" /></bean> -->
+
+
+	<!-- ÜÇLÜ CONSTRUCTOR SETTER İNJECTION -->
+
+
+
+	<bean class="com.esra.springdemo.Personel" id="omer">
+
+		<constructor-arg ref="isci" name="ozlukDosyasi" />
+
+		<constructor-arg name="isim" value="omer" />
+
+		<constructor-arg name="soyisim" value="karakas" />
+
+	</bean>
+
+
+	<bean class="com.esra.springdemo.Personel" id="ali">
+
+		<property ref="memur" name="ozlukDosyasi" />
+
+		<property name="isim" value="ali" />
+
+		<property name="soyisim" value="can" />
+
+	</bean>
+
+	<bean class="com.esra.springdemo.Personel" id="esra">
+
+		<property ref="memur" name="ozlukDosyasi" />
+
+		<property name="isim" value="${baskan.isim}" />
+
+		<property name="soyisim" value="${baskan.soyisim}" />
+
+	</bean>
+
+</beans>
